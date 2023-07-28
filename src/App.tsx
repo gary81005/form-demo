@@ -3,10 +3,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import './App.css';
+import { TestProvider } from './context/test';
 
 const Home = lazy(() => import('./pages/Home'));
 const AntForm = lazy(() => import('./pages/AntForm'));
 const ReactForm = lazy(() => import('./pages/ReactFrom'));
+const ZustandContext = lazy(() => import('./pages/ZustandContext'));
 const ErroBoundaryrPage = lazy(() => import('./pages/ErroBoundaryrPage'));
 
 const theme = createTheme({
@@ -35,7 +37,16 @@ const router = createBrowserRouter([
   {
     path: '/ant-form',
     element: <AntForm />,
-    errorElement: <AntForm />,
+    errorElement: <ErroBoundaryrPage />,
+  },
+  {
+    path: '/zustand',
+    element: (
+      <TestProvider>
+        <ZustandContext />
+      </TestProvider>
+    ),
+    errorElement: <ErroBoundaryrPage />,
   },
 ]);
 

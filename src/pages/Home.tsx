@@ -16,6 +16,8 @@ function Home() {
       <a href="/ant-form">Check To Ant Design Form!</a>
       <br />
       <a href="/react-form">Check To React Hook Form!</a>
+      <br />
+      <a href="/zustand">Check To Zustand test!</a>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
